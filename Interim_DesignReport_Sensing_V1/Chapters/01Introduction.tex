@@ -1,0 +1,35 @@
+% ----------------------------------------------------
+% Introduction
+% ----------------------------------------------------
+\documentclass[class=report,11pt,crop=false]{standalone}
+\input{../Style/ChapterStyle.tex}
+\begin{document}
+% ----------------------------------------------------
+\chapter{Introduction} \label{ch:introduction}
+\vspace{-1cm}
+% ----------------------------------------------------
+
+\section{Problem Description}
+The given task entails a project centered on the creation of a micro-mouse. A micro-mouse is essentially a maze solving robot which moves, detects and avoids obstacles in order to solve the maze.
+\subsubsection{The greater project}
+The creation of the micro-mouse involves the use of 4 different subsystems/modules. This includes : \\
+1. The power subsystem - this is responsible for powering the entire system. \\2. The sensor subsystem - this is responsible for detecting/sensing objects.\\3. The motherboard module - which is responsible for connecting all the PCBs (Printed Circuit Boards for each subsystem) together, and  is the base board that all other modules will slot onto.\\4. The processor board - which uses the STM32L476 which serves as the brain of the robot, responsible for controlling its various functions and movements while communicating with each subsystem.\\
+My specific task entails the design and development of the sensing subsytem only.
+%The project at hand involves the design of a sensing subsystem of a micro-mouses hardware which is capable of detecting the presence of a wall using infrared light, which is powered by a LiPo 800mAh 3.7V battery using components ordrdered from JLCPCB whilst adhering to a strict budget of \$30 per board.%
+% =====================================================
+\section{Scope and Limitations}
+\subsubsection{Scope:}
+ The sensing subsystem will involve detecting whether there is an obstacle in the front and on the sides of the robot, and have a switching means to save power when not in operation. The sensing subsystem must also be interfaced with the rest of the system, and make use of 3 LEDs, each one to demonstrate if a wall is being sensed on the left, right or straight ahead. It does not involve extensive software development beyond interfacing with the processor.
+ \subsubsection{Limitations:}
+The sensing subsystem will be limited to making use of only infrared light to detect walls/objects. It will be interfaced with the STM32L476 processor. The subsystem will adhere to a strict budget of \$30 which may restrict development and the PCB and components are to be ordered exclusively from JLCPCB, which may impact component selection. The time constraint on the development of the project will restrict testing 
+
+% =====================================================
+\section{GitHub Link}
+\url{https://github.com/sachenpather/EEE3088F_FinalReport_Group16}
+% Make sure that the repo is public at the time of this submission.
+% ----------------------------------------------------
+\ifstandalone
+\bibliography{../Bibliography/References.bib}
+\fi
+\end{document}
+% ----------------------------------------------------
