@@ -1,0 +1,18 @@
+.DRV8833PWPR :1 ;2A Low Voltage Dual Brushed DC or Single Bipolar Stepper Motor Driver (PWM Ctrl)
+SOP65P640X120-16N
+*STM IC
+*NGS
+*PLB 1="NSLEEP" 2="AOUT1" 3="AISEN" 4="AOUT2" 5="BOUT2" 6="BISEN" 7="BOUT1" 8="NFAULT" 9="BIN1" 10="BIN2" 11="VCP" 12="VM" 13="GND" 14="VINT" 15="AIN2" 16="AIN1"
+*MXP 16
+*DFN DRV8833PWPR
+~!Manufacturer_Name (Texas Instruments)
+~!Manufacturer_Part_Number (DRV8833PWPR)
+~!Mouser Part Number (595-DRV8833PWPR)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Texas-Instruments/DRV8833PWPR?qs=luhu8ESwuKxT62RV9jrJTg%3D%3D)
+~!Arrow Part Number (DRV8833PWPR)
+~!Link Arrow Price/Stock (https://www.arrow.com/en/products/drv8833pwpr/texas-instruments?region=europe)
+~!Link Datasheet (http://www.ti.com/lit/gpn/drv8833)
+~!Height (1.2mm)
+~!3D_Model (DRV8833PWPR)
+DRV8833PWPR
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 6.1!U 7.1!U 8.1!U 16.1!U 15.1!U 14.1!U 13.1!U 12.1!U 11.1!U 10.1!U 9.1!U 

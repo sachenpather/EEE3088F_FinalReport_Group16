@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'DRV8833PWPR'
+CLASS = IC
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "ARROW_PART_NUMBER", "ARROW_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "Texas Instruments", "DRV8833PWPR" (!) = "", "SOP65P640X120-16N", "Small Outline Packages", "595-DRV8833PWPR", "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/DRV8833PWPR?qs=luhu8ESwuKxT62RV9jrJTg%3D%3D", "DRV8833PWPR", "https://www.arrow.com/en/products/drv8833pwpr/texas-instruments?region=europe", "2A Low Voltage Dual Brushed DC or Single Bipolar Stepper Motor Driver (PWM Ctrl)", "http://www.ti.com/lit/gpn/drv8833", "1.2 mm"
+END_PART
+
+END.
