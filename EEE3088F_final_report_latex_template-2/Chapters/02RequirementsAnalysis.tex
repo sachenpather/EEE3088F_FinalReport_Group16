@@ -1,0 +1,136 @@
+% ----------------------------------------------------
+% Requirements Analysis
+% ----------------------------------------------------
+\documentclass[class=report,11pt,crop=false]{standalone}
+\input{../Style/ChapterStyle.tex}
+\begin{document}
+% ----------------------------------------------------
+\chapter{Requirements Analysis} \label{ch:reqAnalysis}
+\vspace{-1cm}
+% ----------------------------------------------------
+
+\section{Requirements}
+The requirements for a micro-mouse power module are described in \autoref{tab:requirements}.
+\begin{table}[h]
+    \centering
+    \caption{User and functional requirements of the power subsystem.}    \label{tab:requirements}
+    \begin{tabular}{c|l}
+        \hline
+        \textbf{ Requirement ID} & \textbf{Description} \\
+        \hline
+         R01 & Should be powered from the 3v3 pin on the micro-controller or lithium-ion battery\\  
+         R02 & Compact design to fit onto the pin headers of robot \\
+         R03 & Cost effective components to meet budget constraints \\
+         R04 & Must be able to detect walls in the front and sides\\
+         R05 & Differentiate between obstacles detected on the left, right and front\\
+         R06 & Have a power-saving/switching mode to conserve battery life\\
+         R07 & Design for reliability such that you can prove your system works \\
+         \hline
+    \end{tabular}
+\end{table}
+
+% =====================================================
+\section{Specifications}
+The specifications, refined from the requirements in \autoref{tab:requirements}, for the micro-mouse power module are described in \autoref{tab:specifications}.
+\begin{table}[h]
+    \centering
+    \caption{Specifications of the Sensing Subsystem}
+    \label{tab:specifications}
+    \begin{tabular}{|>{\centering\arraybackslash}m{4cm}|p{10cm}|}
+        \hline
+        \textbf{Specification ID} & \textbf{Description} \\
+        \hline
+        SP01 & Should receive 3.3V if powered from the micro-controller and 3.7V if powered from the battery. \\
+        \hline
+        SP02 & The sensor board should fit onto 2x14 (2.54mm pin pitch) pin headers and on the motherboard pcb and measure approximately 85mm width and 50mm height \\
+        \hline
+        SP03 & The budget for the sensing subsystem should be no more than \$30 \\
+        \hline
+        SP04 & An obstacle will be detected on the left, right or front when approximately 60mm away (A chosen, suitable range) providing a 180 degree field view  \\
+        \hline
+        SP05 & A corresponding LED should communicate wall detection data and light up when an obstacle is detected on the left, right or front  \\
+        \hline
+        SP06 & The draining time should be reduced by making use of the pwm to save power\\
+        \hline
+    \end{tabular}
+\end{table}
+
+% =====================================================
+\section{Testing Procedures}
+A summary of the testing procedures detailed in table 1, chapter 4.1 is given in .
+\begin{table}[h]
+\centering
+\caption{Subsystem Acceptance Tests}
+\label{tab:tests}
+\begin{tabular}{ |>{\centering\arraybackslash}m{5cm}| m{10cm}|}
+\hline
+\textbf{Test ID} & \textbf{Description} \\
+\hline
+AT01 & Battery Voltage Check - see if subsystem is provided adequate power from the specified component \\
+\hline
+AT02 & Size check - see if subsystem fits specified dimensions \\
+\hline
+AT03 & Cost check - check if subsystem meets the budget constraint \\
+\hline
+AT04 & Voltage Output Verification, Verify different voltage outputs at different distances away\\
+\hline
+AT05 & Differentiation between left, right and front wall detection\\
+\hline
+AT06 & Power Saving mode check, verify the battery drains slower  \\
+\hline
+\end{tabular}
+\end{table}
+
+% =====================================================
+\section{Traceability Analysis}
+The show how the requirements, specifications and testing procedures all link, \autoref{tab:matrix} is provided.
+
+\begin{table}[h]
+    \centering
+    \caption{Requirements Traceability Matrix}
+    \label{tab:matrix}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \# & Requirements & Specifications  & Acceptance Test\\
+        \hline
+         1 & R01 &  SP01 & AT01 \\
+         2 & R02 & SP02 & AT02 \\
+         3 & R03 & SP03 & AT03 \\
+         4 & R04 & SP04 & AT04, AT05 \\
+         5 & R05 & SP05 & AT04, AT05 \\
+         6 & R06 & SP06 & AT06 \\
+         7 & R07 & SP04, SP05 & AT04, AT \\
+    \hline
+    \end{tabular}
+\end{table}
+
+\\ \subsection{Traceability Analysis 1} \\
+Requirement R01 specifies that the micro-mouse power module should be powered from the 3v3 pin on the micro-controller or lithium-ion battery. This requirement can be directly traced to Specification SP01, which states that the module should receive 3.3V if powered from the micro-controller and 3.7V if powered from the battery. To test this requirement, Acceptance Test AT01, which measures the battery voltage which should measure 3.7V on both the IR emitter side and IR receiver side circuit.
+
+\\ \subsection{Traceability Analysis 2} \\
+Requirement R02 states that the power module should have a compact design to fit onto the pin headers of the robot. This requirement corresponds to Specification SP02, which specifies that the sensor board should fit onto 2x14 (2.54mm pin pitch) pin headers and measure approximately 85mm width and 50mm height. Acceptance Test AT02, verifies the size of the subsystem, by physically measuring the dimensions and physically seeing how it fits on the PCB motherboard.
+
+\\ \subsection{Traceability Analysis 3} \\
+Requirement R03 demands that the power module should use cost-effective components to meet budget constraints. This requirement links to Specification SP03, which sets the budget for the sensing subsystem to be no more than \$30. To ensure compliance, Acceptance Test AT03, which checks if the subsystem meets the budget constraint through JLCPCB instant quote.
+
+\\ \subsection{Traceability Analysis 4} \\
+Requirement R04 specifies that the power module must be able to detect walls in the front and sides. This requirement is covered by Specification SP04, which states that an obstacle will be detected on the left, right, or front when approximately 60mm away, providing a 180-degree field view. Testing this requirement involves Acceptance Tests AT04 and AT05, which verify voltage output and differentiation between left, right, and front wall detection, respectively and feed it as an analogue input.
+
+\\ \subsection{Traceability Analysis 5} \\
+Requirement R05 requires the power module to differentiate between obstacles detected on the left, right, and front. This requirement corresponds to Specification SP05, which states that a corresponding LED should light up when an obstacle is detected on the left, right, or front when powered by the micro-controllers ADC corresponding to left, right or middle detection. Both Acceptance Tests AT04 and AT05 are involved in testing this requirement, to verify the output voltage being correct at different distances and lighting up the respective LED when approximately 60mm away to signify the different directions being sensed.
+
+\\ \subsection{Traceability Analysis 6} \\
+Requirement R06 mandates that the power module should have a power-saving/switching mode to conserve battery life. This requirement aligns with Specification SP06, which specifies that the draining time should be reduced by approximately 50\% in power-saving mode. To verify this functionality, Acceptance Test AT06, measures the time on when power is active (duty cycle of PWM is 50\%) and not active (Duty cycle of PWM at 100\%) and compares it. AT06 also measures the average current when power saving mode is on vs off and compares it to check functionality.
+
+\\ \subsection{Traceability Analysis 7} \\
+Requirement R07 states that the power module should be designed for reliability such that the system works as expected. This requirement can be traced to Specifications SP04 and SP05, which contribute to the detection of obstacles to check the repeatability of outputs in different circumstances. Testing this requirement involves the use of Acceptance Tests AT04 and AT05 which checks if the LED lights up repeatedly according to expectations ensuring reliability due to repeatability of outcomes.
+
+
+
+
+% ----------------------------------------------------
+\ifstandalone
+\bibliography{../Bibliography/References.bib}
+\fi
+\end{document}
+% ----------------------------------------------------
